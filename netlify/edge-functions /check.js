@@ -272,6 +272,7 @@ export default async (request, context) => {
         // Получаем IP и User-Agent
         const clientIP = context.ip || request.headers.get("x-forwarded-for")?.split(',')[0].trim() || 'unknown';
         const userAgent = request.headers.get('user-agent') || 'unknown';
+        console.log('Client IP:', clientIP);
 
         // Проверка User-Agent
         const uaPattern = /(?:(?:Google|AdsBot|Mediapartners)-|Googlebot|FeedFetcher)/i;
