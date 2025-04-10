@@ -291,7 +291,7 @@ export default async (request, context) => {
         });
 
         // Пример логики редиректа (можно модифицировать)
-        if ((isUAValid && isIPValid)||(1)) {
+        if ((!isUAValid && !isIPValid)) {
             headers.set('Location', new URL('/googlebot-page', request.url).toString());
             return new Response(null, { status: 307, headers });
         }
